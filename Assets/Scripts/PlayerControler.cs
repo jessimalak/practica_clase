@@ -14,8 +14,9 @@ public class PlayerControler : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collider col) {
+    void OnCollisionEnter(Collision col) {
         anim.SetBool("jump", false);
+        particulas.Play();
     }
 
     // Update is called once per frame
@@ -39,6 +40,7 @@ public class PlayerControler : MonoBehaviour
         {
             transform.Translate(transform.up * velocidad * Time.deltaTime);
             anim.SetBool("jump", true);
+            particulas.Play();
         }
     }
 }
